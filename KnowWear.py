@@ -2,15 +2,15 @@ import streamlit as st  # pip install streamlit
 import pandas as pd # pip install pandas
 from datetime import datetime
 import requests
-from keys import WeatherBit_Key
 
 # You must run this in the terminal: streamlit run knowwear.py
 # Or: set a break point and run the debugger in Python Streamlit(!) mode
 
 st.title('KnowWear')
 
+wb_api_key = st.secrets.WeatherBit_Key
 city = "Ames, IA"
-url = f"https://api.weatherbit.io/v2.0/forecast/daily?city={city}&key={WeatherBit_Key}&days=10"
+url = f"https://api.weatherbit.io/v2.0/forecast/daily?city={city}&key={wb_api_key}&days=10"
 
 response = requests.get(url)
 data = response.json()
