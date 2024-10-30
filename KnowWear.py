@@ -73,7 +73,6 @@ if data:
     weather_code = current_weather["weatherCode"]
 
     icon = get_weather_icon(weather_code)
-    st.write(icon)
 
     # HTML formatted output
     html_output = f"""
